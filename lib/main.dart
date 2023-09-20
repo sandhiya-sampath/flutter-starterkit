@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/util/environment_config.dart';
 
 void main() {
-  EnvironmentConfig.setEnv(Environment.dev); // default env set to develop
+  EnvironmentConfig.setEnv(Environment.dev); // default env set to dev
   runApp(const MyApp());
 }
 
