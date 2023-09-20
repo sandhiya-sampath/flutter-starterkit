@@ -1,16 +1,18 @@
 # flutter_starter
 
-A new Flutter project.
-
-## Getting Started
-
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+To run app locally
+$flutter run - default environment is dev
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+for dev
+ $flutter run --target="lib/main_dev.dart"
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ for qa
+ $flutter run --target="lib/main_qa.dart"
+
+ for stage
+ $flutter run  --target="lib/main_stage.dart"
+
+ for prod
+ $flutter run --target="lib/main_prod.dart"
