@@ -92,7 +92,8 @@ class ResponsiveWidgetExample extends StatelessWidget {
     );
   }
 }
-
+///Make sure to maintain reusable widgets 
+///So,it will be usefull to create responsive design.
 Widget widgetOne() {
   return const Text("WIDGET ONE");
 }

@@ -32,6 +32,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      ///To test responsive widget 
+      ///call home: const ResponsiveWidgetExample(),
     );
   }
 }
