@@ -15,7 +15,8 @@ class Responsive extends StatelessWidget {
 
 //Customization depends on the design
 
-  //Check if  isMobile, isTablet, isDesktop base on device width
+  ///Check if  isMobile, isTablet, isDesktop base on device width
+  ///Widths can vary based on requirement
   static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 480;
 
@@ -28,13 +29,14 @@ class Responsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //LayoutBuilder helps us creating responsive widgets
     return LayoutBuilder(
       // If our width is more than 1100 then we consider it a desktop
       builder: (context, constraints) {
         if (constraints.maxWidth >= 1100) {
           return desktop;
         }
-        // If width it less then 1100 and more then 650 we consider it as tablet
+        // If width it less then 1100 and more then 480 we consider it as tablet
         else if (constraints.maxWidth >= 480) {
           return tablet;
         }
