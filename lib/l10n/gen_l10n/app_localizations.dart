@@ -77,6 +77,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       'that was used.');
 }
 
-AppLocalizations getL10n({context, key}) {
+AppLocalizations getL10n(BuildContext context) {
   return AppLocalizations.of(context);
 }
