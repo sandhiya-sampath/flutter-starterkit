@@ -32,6 +32,7 @@ abstract class AppLocalizations {
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
+    AppLocalizations.delegate
   ];
 
   /// A list of this localizations delegate's supported locales.
