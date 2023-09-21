@@ -6,6 +6,3 @@ class RouterMap {
 }
 
 
-class Routes {
-  static String get homePage => "/";
-}
