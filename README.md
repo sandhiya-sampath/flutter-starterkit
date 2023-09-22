@@ -16,3 +16,6 @@ for dev
 
  for prod
  $flutter run --target="lib/main_prod.dart"
+
+To auto generate l10n file based on arb file changes run
+&flutter gen-l10n
