@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ///To test responsive widget 
       ///call home: const ResponsiveWidgetExample(),
     );
