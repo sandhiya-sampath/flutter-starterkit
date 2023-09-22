@@ -4,5 +4,4 @@ build/
 .packages
 .flutter-plugins
 .vscode
-# .android/fastlane
-# .ios/fastlane
+.DS_Store
