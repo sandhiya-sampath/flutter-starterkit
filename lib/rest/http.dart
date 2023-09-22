@@ -3,7 +3,8 @@ import 'package:http/http.dart' as http;
 import 'http_interceptor.dart';
 import 'package:http_parser/http_parser.dart' as http_parser;
 
-Future<http.Response> get({required Uri url}) async {
+Future<http.Response> get(
+    {required Uri url, required http.Client httpClient}) async {
   try {
     http.Response response = await httpClient.get(url);
     return response;
@@ -13,7 +14,9 @@ Future<http.Response> get({required Uri url}) async {
 }
 
 Future<http.Response> post(
-    {required Uri url, required Map<dynamic, dynamic> data}) async {
+    {required Uri url,
+    required Map<dynamic, dynamic> data,
+    required http.Client httpClient}) async {
   try {
     final String encodedData = jsonEncode(data);
     http.Response response = await httpClient.post(url, body: encodedData);
@@ -24,7 +27,9 @@ Future<http.Response> post(
 }
 
 Future<http.Response> delete(
-    {required Uri url, required Map<dynamic, dynamic> data}) async {
+    {required Uri url,
+    required Map<dynamic, dynamic> data,
+    required http.Client httpClient}) async {
   try {
     final String encodedData = jsonEncode(data);
     http.Response response = await httpClient.delete(url, body: encodedData);
@@ -35,7 +40,9 @@ Future<http.Response> delete(
 }
 
 Future<http.Response> put(
-    {required Uri url, required Map<dynamic, dynamic> data}) async {
+    {required Uri url,
+    required Map<dynamic, dynamic> data,
+    required http.Client httpClient}) async {
   try {
     final String encodedData = jsonEncode(data);
     http.Response response = await httpClient.put(url, body: encodedData);
@@ -65,6 +72,7 @@ Future<http.StreamedResponse> postMultipartRequest(
     rethrow;
   }
 }
+
 Future<http.StreamedResponse> putMultipartRequest(
     {required String url,
     required dynamic data,

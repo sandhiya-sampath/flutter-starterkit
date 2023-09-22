@@ -43,12 +43,6 @@ void main() {
     await widgetTester.pump();
   });
 
-  testWidgets('Test increment counter', (widgetTester) async {
-    await widgetTester.pumpWidget(MyApp());
-
-    // final counter =
-  });
-
   testWidgets('MyWidget has a title and message', (tester) async {
     await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
 
