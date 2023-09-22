@@ -13,7 +13,7 @@ abstract class BaseViewModel extends ChangeNotifier with ViewModelExceptionAdapt
   String? _errorMessages;
   
   // Private field for setStatus function
-  Function(ViewModelStatus)? setStatusFunction;
+  Function? setStatusFunction;
 
   BaseViewModel({this.setStatusFunction}) {
     //if it is null then call regular status
@@ -31,4 +31,6 @@ abstract class BaseViewModel extends ChangeNotifier with ViewModelExceptionAdapt
     _status = newStatus;
     notifyListeners();
   }
+    void get notifyListener => notifyListeners();
+
 }
