@@ -6,4 +6,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get helloWorld => '¡Hola Mundo!';
+
+  @override
+  String get language => 'Spanish';
 }
