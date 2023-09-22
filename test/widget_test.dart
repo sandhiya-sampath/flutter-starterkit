@@ -6,6 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/my_widget.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_starter/main.dart';
@@ -27,4 +28,36 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+
+  // This is to test the single widget
+  testWidgets('Test FloatingActionButton', (widgetTester) async {
+    await widgetTester.pumpWidget(MyApp());
+
+    final incrementButtonFinder = find.byTooltip('Increment');
+    expect(incrementButtonFinder, findsOneWidget);
+
+    final fabFinder = find.byIcon(Icons.add);
+    expect(fabFinder, findsOneWidget);
+
+    await widgetTester.tap(fabFinder);
+    await widgetTester.pump();
+  });
+
+  testWidgets('Test increment counter', (widgetTester) async {
+    await widgetTester.pumpWidget(MyApp());
+
+    // final counter =
+  });
+
+  testWidgets('MyWidget has a title and message', (tester) async {
+    await tester.pumpWidget(const MyWidget(title: 'T', message: 'M'));
+
+    final titleFinder = find.text('T');
+    final messageFinder = find.text('M');
+
+    expect(titleFinder, findsOneWidget);
+    expect(messageFinder, findsOneWidget);
+  });
+
 }
+
