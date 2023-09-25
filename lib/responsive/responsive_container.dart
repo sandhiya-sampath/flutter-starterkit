@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'responsive_widget.dart';
 
-class Responsive extends StatelessWidget {
+class ResponsiveWidget extends StatelessWidget {
   final Widget? xs;
   final Widget? md;
   final Widget? lg;
   final Widget? xl;
   final Widget? child;
-  const Responsive({
+  const ResponsiveWidget({
     Key? key,
     this.xs,
     this.md,
