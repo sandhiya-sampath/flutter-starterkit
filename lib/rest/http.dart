@@ -4,7 +4,7 @@ import 'http_interceptor.dart';
 import 'package:http_parser/http_parser.dart' as http_parser;
 
 Future<http.Response> get(
-    {required Uri url, required http.Client httpClient}) async {
+    {required Uri url}) async {
   try {
     http.Response response = await httpClient.get(url);
     return response;
@@ -15,8 +15,7 @@ Future<http.Response> get(
 
 Future<http.Response> post(
     {required Uri url,
-    required Map<dynamic, dynamic> data,
-    required http.Client httpClient}) async {
+    required Map<dynamic, dynamic> data}) async {
   try {
     final String encodedData = jsonEncode(data);
     http.Response response = await httpClient.post(url, body: encodedData);
@@ -28,8 +27,7 @@ Future<http.Response> post(
 
 Future<http.Response> delete(
     {required Uri url,
-    required Map<dynamic, dynamic> data,
-    required http.Client httpClient}) async {
+    required Map<dynamic, dynamic> data}) async {
   try {
     final String encodedData = jsonEncode(data);
     http.Response response = await httpClient.delete(url, body: encodedData);
@@ -41,8 +39,7 @@ Future<http.Response> delete(
 
 Future<http.Response> put(
     {required Uri url,
-    required Map<dynamic, dynamic> data,
-    required http.Client httpClient}) async {
+    required Map<dynamic, dynamic> data}) async {
   try {
     final String encodedData = jsonEncode(data);
     http.Response response = await httpClient.put(url, body: encodedData);

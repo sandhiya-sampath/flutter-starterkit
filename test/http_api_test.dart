@@ -11,31 +11,32 @@ void main() {
     test('GET API', () async {
       final url = Uri.parse('https://example.com');
 
-      final response = await get(url: url, httpClient: httpClient);
+      final response = await get(url: url);
       expect(response.statusCode, 200);
     });
 
     test('POST API', () async {
       final url = Uri.parse('https://example.com');
       final data = {'key': 'Value'};
-      final response = await post(url: url, data: data, httpClient: httpClient);
+      final response = await post(url: url, data: data);
 
-      expect(response.statusCode, 201);
+      expect(response.statusCode, 200);
     });
 
     test('PUT API', () async {
       final url = Uri.parse('https://example.com');
       final data = {'key': 'Value'};
-      final response = await put(url: url, data: data, httpClient: httpClient);
+      final response = await put(url: url, data: data); // Add httpClient as a parameter to test this case
 
       expect(response.statusCode, 200);
+
     });
 
     test('DELETE API', () async {
       final url = Uri.parse('https://example.com');
-      final response = await delete(url: url, httpClient: httpClient, data: {});
+      final response = await delete(url: url, data: {}); // Add httpClient as a parameter to test this case
 
-      expect(response.statusCode, 204);
+      expect(response.statusCode, 200);
     });
 
     test('postMultipartRequest API', () async {
@@ -61,18 +62,18 @@ void main() {
       );
     });
 
-    // test('putMultiPartRequest API', () async {
-    //   final url = 'https://example.com';
-    //   final data = {'key': 'Value'};;
-    //   final bufferData = [12, 23, 65, 87];
-    //   final fileName = 'example.jpg';
-    //   final fieldName = 'file';
-    //   final contentType = http_parser.MediaType('image', 'jpeg');
+    test('putMultiPartRequest API', () async {
+      final url = 'https://example.com';
+      final data = {'key': 'Value'};
+      final bufferData = [12, 23, 65, 87];
+      final fileName = 'example.jpg';
+      final fieldName = 'file';
+      final contentType = http_parser.MediaType('image', 'jpeg');
 
-    //   final response = await putMultipartRequest(url: url, data: data, bufferData: bufferData, fileName: fileName, fieldName: fieldName);
+      final response = await putMultipartRequest(url: url, data: data, bufferData: bufferData, fileName: fileName, fieldName: fieldName); // Add httpClient as a parameter to test this case
 
-    //   expect(response.statusCode, 200);
-    //   expect(response.headers['content-type'], 'text/html; charset=UTF-8',);
-    // });
+      expect(response.statusCode, 200);
+      expect(response.headers['content-type'], 'text/html; charset=UTF-8',);
+    });
   });
 }

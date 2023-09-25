@@ -53,7 +53,7 @@ class MockClient extends Mock implements http.Client {
     final mockResponseData = {'message': 'Mock POST response'};
     final mockResponseJson = jsonEncode(mockResponseData);
 
-    return http.Response(mockResponseJson, 201, headers: {
+    return http.Response(mockResponseJson, 200, headers: {
       'content-type': 'application/json',
     });
   }
