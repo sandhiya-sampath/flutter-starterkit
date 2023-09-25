@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/my_widget.dart';
 import 'package:flutter_starter/util/environment_config.dart';
 import 'l10n/gen_l10n/app_localizations.dart';
 import 'navigation/router_config.dart';
