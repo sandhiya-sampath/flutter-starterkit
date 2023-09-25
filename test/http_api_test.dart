@@ -7,7 +7,7 @@ import 'mock/mock_client.dart';
 void main() {
   http.Client httpClient = MockClient();
 
-  group('Testing APIs', () {
+  group('Testing all the APIs', () {
     test('GET API', () async {
       final url = Uri.parse('https://example.com');
 
