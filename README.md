@@ -2,8 +2,8 @@
 
 This project is a starting point for a Flutter application.
 
-To run app locally
-$flutter run - default environment is dev
+To run app locally - default environment is dev
+$flutter run 
 
 for dev
  $flutter run --target="lib/main_dev.dart"

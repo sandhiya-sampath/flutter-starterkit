@@ -3,7 +3,7 @@ import 'button_theme.dart';
 import 'text_theme.dart';
 
 
-ThemeData jswConstructOneTheme = ThemeData(
+ThemeData themeData = ThemeData(
     useMaterial3: true,
     primaryColor: ColorPalette.primaryColor,
     fontFamily: 'Manrope',
