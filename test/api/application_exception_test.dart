@@ -1,6 +1,6 @@
 import 'package:flutter_starter/rest/exceptions/application_exception.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'mock/mixin_class.dart';
+import '../mock/mixin_class.dart';
 
 void main() {
   group('Application exception and exception handler test', () {

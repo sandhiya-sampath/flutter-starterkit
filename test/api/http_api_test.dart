@@ -2,7 +2,7 @@ import 'package:flutter_starter/rest/http.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart' as http_parser;
-import 'mock/mock_client.dart';
+import '../mock/mock_client.dart';
 
 void main() {
   http.Client httpClient = MockClient();
