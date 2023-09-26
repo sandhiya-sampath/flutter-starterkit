@@ -11,14 +11,14 @@ void main() {
     test('GET API', () async {
       final url = Uri.parse('https://example.com');
 
-      final response = await get(url: url);
+      final response = await get(url: url); // Change this with httpClient.get(url) to mock the data
       expect(response.statusCode, 200);
     });
 
     test('POST API', () async {
       final url = Uri.parse('https://example.com');
       final data = {'key': 'Value'};
-      final response = await post(url: url, data: data);
+      final response = await post(url: url, data: data); // Change this with httpClient.post(url, data) to mock the data
 
       expect(response.statusCode, 200);
     });
@@ -26,7 +26,8 @@ void main() {
     test('PUT API', () async {
       final url = Uri.parse('https://example.com');
       final data = {'key': 'Value'};
-      final response = await put(url: url, data: data); // Add httpClient as a parameter to test this case
+      final response = await put(url: url, data: data); // Change this with httpClient.put(url, data) to mock the data
+      // Add httpClient as a parameter to test this case
 
       expect(response.statusCode, 200);
 
@@ -34,7 +35,8 @@ void main() {
 
     test('DELETE API', () async {
       final url = Uri.parse('https://example.com');
-      final response = await delete(url: url, data: {}); // Add httpClient as a parameter to test this case
+      final response = await delete(url: url, data: {}); // Change this with httpClient.delete(url, data) to mock the data
+      // Add httpClient as a parameter to test this case
 
       expect(response.statusCode, 200);
     });
