@@ -1,3 +1,4 @@
+import 'package:flutter_starter/util/logger.dart';
 import '../../rest/exceptions/application_exception.dart';
 import '../base_view_model.dart';
 import '../exceptions/view_model_exception_result.dart';
@@ -21,6 +22,7 @@ class CounterViewModel extends BaseViewModel {
       setStatus(ViewModelStatus.loading);
       setStatus(ViewModelStatus.completed);
     } on ApplicationException catch (exception) {
+      Logger.error(exception);
       ViewModelExceptionResult result = exceptionToViewModelResult(exception);
       errorMessages = result.validationErrors;
       setStatus(result.status);
