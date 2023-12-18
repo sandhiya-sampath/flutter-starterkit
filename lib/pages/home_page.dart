@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/view_model/user/user_view_model.dart';
 import 'package:provider/provider.dart';
 import '../view_model/counter/counter_view_model.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, });
 
-  final String title;
   
 
   @override
@@ -13,23 +13,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late CounterViewModel counterViewModel;
+  late UserViewModel userViewModel;
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      counterViewModel = Provider.of<CounterViewModel>(context,listen: false);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
+      userViewModel = Provider.of<UserViewModel>(context,listen: false);
+      await userViewModel.getUserDetail();
     });
+
+    
 
   }
   
   @override
   Widget build(BuildContext context) {
-    counterViewModel = Provider.of<CounterViewModel>(context);
+    userViewModel = Provider.of<UserViewModel>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text( ""),
       ),
       body: Center(
         child: Column(
@@ -38,15 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '${counterViewModel.counter}',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+           
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: counterViewModel.incrementCounter,
+        onPressed: (){},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

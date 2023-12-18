@@ -9,6 +9,6 @@ class ApiDirectory {
   final String _baseUrl = EnvironmentConfig.apiUrl;
 
   //Simple Example
-  // Uri getUserDetail() =>
-  //     Uri.parse("$_baseUrl/user");
+  Uri getUserDetail() =>
+      Uri.parse("$_baseUrl/user");
 }
